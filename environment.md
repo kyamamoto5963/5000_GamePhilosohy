@@ -19,12 +19,13 @@ BeerGame 配下を開発する環境の前提。**機密（パスワード・鍵
 | 項目 | 会社 | 自宅 | 切り替え手段 | 備考 |
 |---|---|---|---|---|
 | （例）プロジェクトルート | | | コメントアウト | |
-| Godot 4.6.1（5001_KeyInputGame） | `T:\tools\godot\Godot_v4.6.1-stable_win64.exe` | 未確認 | その場確認 | エンジンはタイトルごと選定。5001 は Godot 4.6.1-stable に固定 |
+| Godot 4.6.1（5001_KeyInputGame） | `T:\tools\godot\Godot_v4.6.1-stable_win64.exe\Godot_v4.6.1-stable_win64.exe`（※ `.exe` 名のフォルダの中に実体exe＋console exe） | 未確認 | その場確認 | エンジンはタイトルごと選定。5001 は Godot 4.6.1-stable に固定 |
 
 ## ツールの場所
 
 - **ゲームエンジンはタイトルごとに選定**（→ philosophy「技術スタックは固定しない」）。タイトルごとに版を固定し、上表に拠点別パスを追記する。
-- **Godot（5001_KeyInputGame）**: 4.6.1-stable / win64。会社 `T:\tools\godot\Godot_v4.6.1-stable_win64.exe`、自宅は未確認（次に自宅作業時に申告）。
+- **Godot（5001_KeyInputGame）**: 4.6.1-stable / win64。会社は `T:\tools\godot\Godot_v4.6.1-stable_win64.exe`（**これは `.exe` という名のフォルダ**）の中の `Godot_v4.6.1-stable_win64.exe` が実体（同フォルダに `..._console.exe` もあり）。自宅は未確認（次に自宅作業時に申告）。
+  - **CLI Tip**: `class_name`（グローバルクラス）は単純なヘッドレス起動では登録されない。新規追加直後は一度 `--headless --editor --quit` でプロジェクト走査を走らせるとクラスキャッシュ（`.godot/global_script_class_cache.cfg`）と `.import` が生成され、以後は `--headless --path . --quit` でパース検証できる。**エディタGUIを開かずに進められる**。
 - パスは拠点で異なる前提。絶対パスを埋め込まず、その場で確認するのが原則。
 
 ## GitHub

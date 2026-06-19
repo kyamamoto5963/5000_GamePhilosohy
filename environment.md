@@ -1,6 +1,6 @@
 # 開発環境メモ（拠点・ツール・GitHub）
 
-最終更新: 2026-06-18
+最終更新: 2026-06-19
 
 BeerGame 配下を開発する環境の前提。**機密（パスワード・鍵本体）はここに書かない**
 （このリポジトリは GitHub に push される）。
@@ -19,12 +19,12 @@ BeerGame 配下を開発する環境の前提。**機密（パスワード・鍵
 | 項目 | 会社 | 自宅 | 切り替え手段 | 備考 |
 |---|---|---|---|---|
 | （例）プロジェクトルート | | | コメントアウト | |
-| Godot 4.6.1（5001_KeyInputGame） | `T:\tools\godot\Godot_v4.6.1-stable_win64.exe\Godot_v4.6.1-stable_win64.exe`（※ `.exe` 名のフォルダの中に実体exe＋console exe） | 未確認 | その場確認 | エンジンはタイトルごと選定。5001 は Godot 4.6.1-stable に固定 |
+| Godot 4.7（5001_KeyInputGame） | 未確認（要再導入：旧 4.6.1 から 4.7 へ更新） | `D:\tools\godot\Godot_v4.7-stable_win64.exe`（同フォルダに `..._console.exe` もあり） | その場確認 | エンジンはタイトルごと選定。5001 は **Godot 4.7-stable に固定**（2026-06-19 に 4.6.1 から更新）。会社側も 4.7 へ入れ替え要 |
 
 ## ツールの場所
 
 - **ゲームエンジンはタイトルごとに選定**（→ philosophy「技術スタックは固定しない」）。タイトルごとに版を固定し、上表に拠点別パスを追記する。
-- **Godot（5001_KeyInputGame）**: 4.6.1-stable / win64。会社は `T:\tools\godot\Godot_v4.6.1-stable_win64.exe`（**これは `.exe` という名のフォルダ**）の中の `Godot_v4.6.1-stable_win64.exe` が実体（同フォルダに `..._console.exe` もあり）。自宅は未確認（次に自宅作業時に申告）。
+- **Godot（5001_KeyInputGame）**: 4.7-stable / win64（2026-06-19 に 4.6.1 から固定バージョンを更新）。自宅は `D:\tools\godot\Godot_v4.7-stable_win64.exe`（実体exe＋同フォルダに `..._console.exe`）。会社は旧 4.6.1 が `T:\tools\godot\Godot_v4.6.1-stable_win64.exe`（`.exe` という名のフォルダ）に入っていたので、次に会社作業する際に **4.7-stable へ入れ替えが必要**。
   - **CLI Tip**: `class_name`（グローバルクラス）は単純なヘッドレス起動では登録されない。新規追加直後は一度 `--headless --editor --quit` でプロジェクト走査を走らせるとクラスキャッシュ（`.godot/global_script_class_cache.cfg`）と `.import` が生成され、以後は `--headless --path . --quit` でパース検証できる。**エディタGUIを開かずに進められる**。
 - パスは拠点で異なる前提。絶対パスを埋め込まず、その場で確認するのが原則。
 
